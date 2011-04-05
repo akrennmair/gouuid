@@ -37,7 +37,9 @@ type UUID [UUIDLen]byte
 
 // New generates and returns new UUID v4 (generated randomly).
 func New() (u UUID) {
-	rand.Read(u[:])
+	if _, err := io.ReadFull(rand.Reader, u[:]); err != nil {
+		panic("error reading from random source: " + err.String())
+	}
 	u[6] = u[6]>>4 | 0x40 // set version number
 	u[8] &^= 1 << 6       // set 6th bit to 0
 	u[8] |= 1 << 7        // set 7th bit to 1
