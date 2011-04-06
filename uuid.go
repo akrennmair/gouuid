@@ -25,6 +25,7 @@ import (
 	"fmt"
 	"crypto/rand"
 	"encoding/hex"
+	"io"
 	"os"
 	"strings"
 )
