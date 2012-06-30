@@ -1,8 +1,7 @@
-// UUID package implements UUID (version 4, random) type and methods for the manipulation of it.
+// gouuid package implements UUID (version 4, random) type and methods for the manipulation of it.
 // It implements the encoding/json.Marshaler and encoding/json.Unmarshaler interface to allow easy
 // handling with JSON.
-package uuid
-
+package gouuid
 import (
 	"fmt"
 	"crypto/rand"
