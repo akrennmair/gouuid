@@ -2,10 +2,11 @@
 // It implements the encoding/json.Marshaler and encoding/json.Unmarshaler interface to allow easy
 // handling with JSON.
 package gouuid
+
 import (
-	"fmt"
 	"crypto/rand"
 	"encoding/hex"
+	"fmt"
 	"io"
 	"strings"
 )
@@ -22,7 +23,7 @@ func New() (u UUID) {
 		panic("error reading from random source: " + e.Error())
 	}
 	u[6] = u[6]>>4 | 0x40 // set version number
-	u[8] = u[8] & ^uint8(1 << 6)
+	u[8] = u[8] & ^uint8(1<<6)
 	u[8] |= 1 << 7
 	return
 }
