@@ -53,6 +53,11 @@ func (u UUID) ShortString() string {
 	return fmt.Sprintf("%x", u[:])
 }
 
+// Bytes returns the UUID as []byte.
+func (u UUID) Bytes() []byte {
+	return u[:]
+}
+
 func (u UUID) Equal(a UUID) bool {
 	for i, v := range u {
 		if v != a[i] {
