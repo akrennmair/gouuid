@@ -48,7 +48,7 @@ func (u UUID) String() string {
 	return fmt.Sprintf("%x-%x-%x-%x-%x", u[:4], u[4:6], u[6:8], u[8:10], u[10:])
 }
 
-func (u UUID) StringUppercase() string {
+func (u UUID) StringUpperCase() string {
 	return fmt.Sprintf("%X-%X-%X-%X-%X", u[:4], u[4:6], u[6:8], u[8:10], u[10:])
 }
 
