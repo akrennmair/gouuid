@@ -48,10 +48,18 @@ func (u UUID) String() string {
 	return fmt.Sprintf("%x-%x-%x-%x-%x", u[:4], u[4:6], u[6:8], u[8:10], u[10:])
 }
 
+func (u UUID) StringUppercase() string {
+	return fmt.Sprintf("%X-%X-%X-%X-%X", u[:4], u[4:6], u[6:8], u[8:10], u[10:])
+}
+
 // ShortString returns short string representation (without dashes) of UUID.
 // Example: b7c016dc2ba4a68db368a97da9f43cee
 func (u UUID) ShortString() string {
 	return fmt.Sprintf("%x", u[:])
+}
+
+func (u UUID) ShortStringUpperCase() string {
+	return fmt.Sprintf("%X", u[:])
 }
 
 // Bytes returns the UUID as []byte.
